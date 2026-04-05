@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rian Makatita — SEO Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f;--surface:#111118;--border:#1e1e2e;
+  --accent:#00e5a0;--accent2:#0066ff;--accent3:#ff6b35;
+  --text:#e8e8f0;--muted:#6b6b80;--card:#13131c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;padding:18px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--accent)}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:12px;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+
+/* HERO */
+.hero{padding:80px 60px;background:var(--bg);position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(110px);opacity:.1;pointer-events:none}
+.o1{width:500px;height:500px;background:var(--accent);top:-100px;right:-80px}
+.o2{width:350px;height:350px;background:var(--accent2);bottom:-50px;left:5%}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1160px;margin:0 auto;position:relative;z-index:1}
+
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.2);border-radius:100px;padding:5px 16px;font-size:11px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:22px}
+.pulse{width:6px;height:6px;background:var(--accent);border-radius:50%;flex-shrink:0;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.8)}}
+.hero-name{font-family:'Syne',sans-serif;font-size:clamp(44px,5.5vw,72px);font-weight:800;line-height:1;letter-spacing:-2px;margin-bottom:10px}
+.hero-name span{display:block;background:linear-gradient(135deg,var(--accent),#00b8ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-title{font-size:15px;color:var(--muted);margin-bottom:18px}
+.hero-desc{font-size:15px;color:#9898aa;line-height:1.8;margin-bottom:32px;max-width:460px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:#000;padding:12px 24px;border-radius:8px;font-size:13px;font-weight:500;text-decoration:none;transition:all .2s;font-family:'DM Sans',sans-serif}
+.btn-p:hover{background:#00ffb3;transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,229,160,.25)}
+.btn-s{display:inline-flex;align-items:center;gap:7px;background:transparent;color:var(--text);padding:12px 24px;border-radius:8px;font-size:13px;text-decoration:none;border:1px solid var(--border);transition:all .2s}
+.btn-s:hover{border-color:var(--accent);color:var(--accent)}
+
+.hero-stats{display:flex;flex-direction:column;gap:16px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 26px;position:relative;overflow:hidden;transition:transform .3s}
+.stat-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%}
+.sc-g::before{background:var(--accent)}
+.sc-b::before{background:var(--accent2)}
+.sc-o::before{background:var(--accent3)}
+.stat-card:hover{transform:translateX(-4px)}
+.stat-num{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1;margin-bottom:4px}
+.sc-g .stat-num{color:var(--accent)}
+.sc-b .stat-num{color:var(--accent2)}
+.sc-o .stat-num{color:var(--accent3)}
+.stat-lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.stat-ctx{margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.stat-src{font-size:11px;color:var(--muted);font-style:italic}
+.stat-per{font-size:11px;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.sc-g .stat-per{color:var(--accent);background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.15)}
+.sc-b .stat-per{color:var(--accent2);background:rgba(0,102,255,.08);border:1px solid rgba(0,102,255,.15)}
+.sc-o .stat-per{color:var(--accent3);background:rgba(255,107,53,.08);border:1px solid rgba(255,107,53,.15)}
+
+/* SHARED */
+hr.div{border:none;border-top:1px solid var(--border)}
+section{padding:80px 60px}
+.wrap{max-width:1160px;margin:0 auto}
+.s-lbl{font-size:11px;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.s-lbl::before{content:'';width:20px;height:1px;background:var(--accent)}
+.s-title{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:700;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px}
+.s-sub{color:var(--muted);font-size:14px;max-width:520px;line-height:1.8;margin-bottom:48px}
+
+/* CASE STUDY */
+#case{background:var(--surface)}
+.case-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-bottom:48px;align-items:start}
+.proj-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,102,255,.1);border:1px solid rgba(0,102,255,.2);padding:4px 12px;border-radius:100px;font-size:11px;color:var(--accent2);margin-bottom:16px}
+.case-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.mi-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.mi-v{font-size:13px;color:var(--text);font-weight:500}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:48px}
+.ri{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px 18px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+.ri::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .3s}
+.ri:hover::after{transform:scaleX(1)}
+.ri:hover{transform:translateY(-4px);border-color:rgba(0,229,160,.15)}
+.r-num{font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--accent);letter-spacing:-1px;line-height:1;margin-bottom:8px}
+.r-desc{font-size:12px;color:var(--muted);line-height:1.5}
+.strat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:44px}
+.sc-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:all .3s}
+.sc-card:hover{border-color:rgba(0,229,160,.2);transform:translateY(-2px)}
+.sc-n{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;color:var(--border);line-height:1;margin-bottom:14px}
+.sc-t{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px}
+.sc-d{font-size:13px;color:var(--muted);line-height:1.7}
+.ba{display:grid;grid-template-columns:1fr 1fr;border-radius:14px;overflow:hidden;border:1px solid var(--border);margin-bottom:36px}
+.ba-p{padding:32px}
+.ba-before{background:rgba(255,107,53,.05)}
+.ba-after{background:rgba(0,229,160,.05)}
+.ba-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px;font-weight:600}
+.ba-before .ba-lbl{color:var(--accent3)}
+.ba-after .ba-lbl{color:var(--accent)}
+.ba-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.ba-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#9898aa;line-height:1.5}
+.ic{width:18px;height:18px;border-radius:50%;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:9px}
+.ba-before .ic{background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.3);color:var(--accent3)}
+.ba-after .ic{background:rgba(0,229,160,.1);border:1px solid rgba(0,229,160,.3);color:var(--accent)}
+.proof-cta{text-align:center;padding:8px 0 16px}
+
+/* SKILLS */
+#skills{background:var(--bg)}
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sk-cat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:all .3s}
+.sk-cat:hover{border-color:rgba(0,229,160,.2)}
+.sk-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:18px;color:var(--accent)}
+.sk-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.sk-list li{font-size:13px;color:#9898aa;display:flex;align-items:center;gap:8px}
+.sk-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--muted);flex-shrink:0}
+
+/* EXPERIENCE */
+#exp{background:var(--surface)}
+.timeline{position:relative;display:flex;flex-direction:column}
+.timeline::before{content:'';position:absolute;left:18px;top:22px;bottom:22px;width:1px;background:var(--border)}
+.tl-item{display:grid;grid-template-columns:36px 1fr;gap:24px;padding-bottom:32px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{width:36px;height:36px;background:var(--card);border:2px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;margin-top:2px;transition:all .3s}
+.tl-di{width:7px;height:7px;background:var(--muted);border-radius:50%;transition:all .3s}
+.tl-item:hover .tl-dot{border-color:var(--accent);background:rgba(0,229,160,.1)}
+.tl-item:hover .tl-di{background:var(--accent)}
+.tl-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 26px;transition:all .3s}
+.tl-item:hover .tl-box{border-color:rgba(0,229,160,.15)}
+.tl-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;flex-wrap:wrap;gap:6px}
+.tl-co{font-family:'Syne',sans-serif;font-size:16px;font-weight:700}
+.tl-per{font-size:11px;color:var(--accent);background:rgba(0,229,160,.08);border:1px solid rgba(0,229,160,.15);padding:3px 10px;border-radius:100px;white-space:nowrap}
+.tl-role{font-size:13px;color:var(--muted);margin-bottom:12px;font-style:italic}
+.tl-tasks{list-style:none;display:flex;flex-direction:column;gap:6px}
+.tl-tasks li{font-size:13px;color:#9898aa;padding-left:14px;position:relative;line-height:1.6}
+.tl-tasks li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px}
+
+/* CONTACT */
+#contact{background:var(--bg)}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.ct-links{display:flex;flex-direction:column;gap:12px}
+.ct-link{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;text-decoration:none;color:var(--text);transition:all .3s}
+.ct-link:hover{border-color:rgba(0,229,160,.3);transform:translateX(4px)}
+.ct-icon{width:36px;height:36px;background:rgba(0,229,160,.1);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.ct-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.ct-val{font-size:13px;color:var(--text)}
+.proof-links{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.proof-link{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--accent);text-decoration:none;padding:10px 16px;border-radius:8px;background:rgba(0,229,160,.05);border:1px solid rgba(0,229,160,.1);transition:all .3s}
+.proof-link:hover{background:rgba(0,229,160,.1);transform:translateX(4px)}
+
+/* FOOTER */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 60px;display:flex;justify-content:space-between;align-items:center}
+.f-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--accent)}
+.f-copy{font-size:12px;color:var(--muted)}
+
+@media(max-width:900px){
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  .hero{padding:60px 20px}
+  .hero-inner{grid-template-columns:1fr;gap:36px}
+  section{padding:56px 20px}
+  .results-grid{grid-template-columns:repeat(2,1fr)}
+  .case-head{grid-template-columns:1fr;gap:32px}
+  .strat-grid{grid-template-columns:1fr}
+  .ba{grid-template-columns:1fr}
+  .sk-grid{grid-template-columns:1fr}
+  .ct-grid{grid-template-columns:1fr;gap:36px}
+  footer{flex-direction:column;gap:10px;text-align:center;padding:20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">RM.</div>
+  <ul class="nav-links">
+    <li><a href="#case">Case Study</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#exp">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><div class="pulse"></div>Open to Opportunities</div>
+      <h1 class="hero-name">Rian<span>Makatita</span></h1>
+      <p class="hero-title">SEO Specialist & Automation Expert · 5+ Years</p>
+      <p class="hero-desc">I architect intent driven SEO systems that convert search intent into measurable business results by scaling organic visibility, leads, and authority through data, structure, and automation..</p>
+      <div class="cta-row">
+        <a href="mailto:rianmakatita1201@gmail.com" class="btn-p">✉ Let's Talk</a>
+        <a href="https://www.linkedin.com/in/rian-makatita-ab7431190/" target="_blank" class="btn-s">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card sc-g">
+        <div class="stat-num">2×</div>
+        <div class="stat-lbl">Total Impressions — 7.9M → 15.8M</div>
+        <div class="stat-ctx"><span class="stat-src">QHomeMart · Most Recent Role</span><span class="stat-per">⏱ ~8 Months</span></div>
+      </div>
+      <div class="stat-card sc-b">
+        <div class="stat-num">147+</div>
+        <div class="stat-lbl">Keywords Secured on Google Page 1</div>
+        <div class="stat-ctx"><span class="stat-src">QHomeMart · Most Recent Role</span><span class="stat-per">⏱ ~8 Months</span></div>
+      </div>
+      <div class="stat-card sc-o">
+        <div class="stat-num">3–4×</div>
+        <div class="stat-lbl">Growth in Inbound Leads from Organic</div>
+        <div class="stat-ctx"><span class="stat-src">QHomeMart · Most Recent Role</span><span class="stat-per">⏱ ~8 Months</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<section id="case">
+  <div class="wrap">
+    <div class="s-lbl">Case Study</div>
+    <div class="case-head">
+      <div>
+        <div class="proj-badge">🛒 Multi-Category E-Commerce</div>
+        <h2 class="s-title">QHomeMart<br>SEO Transformation</h2>
+        <p class="s-sub" style="margin-bottom:0">A full scale SEO overhaul that transformed a bloated, cannibalized architecture into a lean, intent first system, doubling visibility and tripling leads within 8 months.</p>
+      </div>
+      <div class="case-meta">
+        <div class="mi"><div class="mi-l">Client</div><div class="mi-v">QHomeMart</div></div>
+        <div class="mi"><div class="mi-l">Role</div><div class="mi-v">SEO Strategist (Lead)</div></div>
+        <div class="mi"><div class="mi-l">Industry</div><div class="mi-v">Retail & E-Commerce</div></div>
+        <div class="mi"><div class="mi-l">Period</div><div class="mi-v">May 2025 – Present</div></div>
+        <div class="mi" style="grid-column:1/-1"><div class="mi-l">Market</div><div class="mi-v">Local (Store Traffic) + National (Online Sales)</div></div>
+      </div>
+    </div>
+    <div class="results-grid">
+      <div class="ri"><div class="r-num">100%</div><div class="r-desc">Impressions Growth<br>7.9M → 15.8M</div></div>
+      <div class="ri"><div class="r-num">11.3→5</div><div class="r-desc">Avg. Position<br>Improvement</div></div>
+      <div class="ri"><div class="r-num">147+</div><div class="r-desc">Page 1 Keywords<br>(Local & National)</div></div>
+      <div class="ri"><div class="r-num">3–4×</div><div class="r-desc">Inbound Leads<br>from Organic</div></div>
+    </div>
+    <div class="s-lbl">Strategy & Execution</div>
+    <h3 style="font-family:'Syne',sans-serif;font-size:28px;font-weight:700;letter-spacing:-1px;margin-bottom:28px">Dual-Track Implementation</h3>
+    <div class="strat-grid">
+      <div class="sc-card"><div class="sc-n">01</div><div class="sc-t">Local-First Conversion Strategy</div><div class="sc-d">Prioritized capturing high-intent local queries to deliver immediate ROI and drive physical store visits while national logistics infrastructure was being assessed.</div></div>
+      <div class="sc-card"><div class="sc-n">02</div><div class="sc-t">Strategic National Expansion</div><div class="sc-d">Planned a phased expansion for national keywords, focusing on high-margin product categories once the site's technical foundation was fully stabilized.</div></div>
+      <div class="sc-card"><div class="sc-n">03</div><div class="sc-t">Technical Debt Liquidation</div><div class="sc-d">Led a massive cleanup of 3,000+ legacy articles to resolve internal link spam, broken hierarchies, and severe keyword cannibalization using custom Python automation.</div></div>
+      <div class="sc-card"><div class="sc-n">04</div><div class="sc-t">Weekly Sprint Engine</div><div class="sc-d">Implemented a "Category of the Week" rotation — managing a team to produce 24 targeted cluster pages per sprint with 100% alignment to intent-first standards.</div></div>
+    </div>
+    <div class="s-lbl">The Transformation</div>
+    <div class="ba">
+      <div class="ba-p ba-before">
+        <div class="ba-lbl">⚠ Before — Legacy State</div>
+        <ul class="ba-list">
+          <li><div class="ic">✕</div>Unstructured content — pages without clear roles</li>
+          <li><div class="ic">✕</div>Fragmented, non-cohesive internal linking</li>
+          <li><div class="ic">✕</div>Blogs cannibalizing high-value money pages</li>
+          <li><div class="ic">✕</div>Volume-first execution with low business ROI</li>
+          <li><div class="ic">✕</div>Zero separation between local and national intent</li>
+        </ul>
+      </div>
+      <div class="ba-p ba-after">
+        <div class="ba-lbl">✓ After — Strategic State</div>
+        <ul class="ba-list">
+          <li><div class="ic">✓</div>Intent-first architecture with clear Local vs. National roles</li>
+          <li><div class="ic">✓</div>Systematic silo authority engine with structured linking</li>
+          <li><div class="ic">✓</div>Revenue-driven prioritization via local intent targeting</li>
+          <li><div class="ic">✓</div>Authority-first approach — structural growth, no risky backlinks</li>
+          <li><div class="ic">✓</div>Zero keyword cannibalization across all page types</li>
+        </ul>
+      </div>
+    </div>
+    <div class="proof-cta">
+      <a href="https://bit.ly/rian-makatita-keyword-rankings" target="_blank" class="btn-p" style="font-size:12px">📊 View Full Keyword Rankings Proof ↗</a>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section id="skills">
+  <div class="wrap">
+    <div class="s-lbl">Expertise</div>
+    <h2 class="s-title">Skills & Tools</h2>
+    <p class="s-sub">A practitioner's toolkit built over 5+ years across diverse industries and website scales.</p>
+    <div class="sk-grid">
+      <div class="sk-cat">
+        <div class="sk-title">🔧 Technical SEO</div>
+        <ul class="sk-list">
+          <li>Site Architecture & Internal Linking</li>
+          <li>Keyword Cannibalization Resolution</li>
+          <li>Crawl Budget Optimization</li>
+          <li>301 Redirects & URL Structure</li>
+          <li>Technical SEO Audits</li>
+          <li>Page Speed & Core Web Vitals</li>
+        </ul>
+      </div>
+      <div class="sk-cat">
+        <div class="sk-title">🔍 Strategy & Research</div>
+        <ul class="sk-list">
+          <li>Intent-Based Keyword Research</li>
+          <li>Competitive Gap Analysis</li>
+          <li>Pillar-Cluster Content Architecture</li>
+          <li>Local & National SEO Strategy</li>
+          <li>SILO Structure Design</li>
+          <li>E-Commerce PLP Optimization</li>
+        </ul>
+      </div>
+      <div class="sk-cat">
+        <div class="sk-title">⚡ Automation & Tools</div>
+        <ul class="sk-list">
+          <li>Python SEO Scripting</li>
+          <li>AI/LLM Integration for Workflows</li>
+          <li>Google Search Console & Analytics</li>
+          <li>Ahrefs & SEMrush</li>
+          <li>Screaming Frog</li>
+          <li>Google Ads & Facebook Ads</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section id="exp">
+  <div class="wrap">
+    <div class="s-lbl">Career</div>
+    <h2 class="s-title">Work Experience</h2>
+    <p class="s-sub">5+ years of progressive experience across local agencies, international firms, and freelance engagements.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-di"></div></div>
+        <div class="tl-box">
+          <div class="tl-head"><div><div class="tl-co">QHomeMart</div><div class="tl-role">SEO Strategist — Lead Role · Yogyakarta</div></div><span class="tl-per">May 2025 – Present</span></div>
+          <ul class="tl-tasks">
+            <li>Led end-to-end SEO strategy for a multi-category e-commerce platform</li>
+            <li>Delivered 190+ Page 1 keyword rankings across local & national markets</li>
+            <li>Built internal SEO automation tools using Python to scale operations</li>
+            <li>Managed and mentored an SEO Specialist and Content Writer</li>
+            <li>Achieved 3–4× inbound lead growth from organic search in ~8 months</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-di"></div></div>
+        <div class="tl-box">
+          <div class="tl-head"><div><div class="tl-co">Otomotor Academy Yogyakarta</div><div class="tl-role">Digital Marketing — Freelance</div></div><span class="tl-per">Feb – Apr 2025</span></div>
+          <ul class="tl-tasks">
+            <li>Managed SEO strategy and implementation</li>
+            <li>Ran Google Ads campaigns for lead generation</li>
+            <li>Developed social media marketing strategies</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-di"></div></div>
+        <div class="tl-box">
+          <div class="tl-head"><div><div class="tl-co">Self-Employed</div><div class="tl-role">Digital Marketer · Yogyakarta</div></div><span class="tl-per">Feb – Dec 2024</span></div>
+          <ul class="tl-tasks">
+            <li>TikTok SEO & content strategy</li>
+            <li>Affiliate Marketing campaigns</li>
+            <li>AI integration for digital marketing workflows</li>
+            <li>Copywriting and video editing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-di"></div></div>
+        <div class="tl-box">
+          <div class="tl-head"><div><div class="tl-co">Tren Masa Kini</div><div class="tl-role">SEO Specialist — Freelance · Yogyakarta</div></div><span class="tl-per">Jun 2023 – Jan 2024</span></div>
+          <ul class="tl-tasks">
+            <li>On-page and off-page SEO optimization</li>
+            <li>Keyword research, competitor analysis, and link building strategy</li>
+            <li>High-quality website content creation</li>
+            <li>Early exploration of AI tools for digital marketing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-di"></div></div>
+        <div class="tl-box">
+          <div class="tl-head"><div><div class="tl-co">Tri7 Solution</div><div class="tl-role">SEO Specialist · Remote</div></div><span class="tl-per">Sep 2020 – Mar 2023</span></div>
+          <ul class="tl-tasks">
+            <li>Full-cycle SEO: on-page, off-page, keyword research & link building</li>
+            <li>Market and competitor analysis</li>
+            <li>Facebook Ads & Google Ads campaign management</li>
+            <li>Compelling content writing for SEO and conversions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-di"></div></div>
+        <div class="tl-box">
+          <div class="tl-head"><div><div class="tl-co">Golden Nero</div><div class="tl-role">SEO Specialist · Makati, Philippines</div></div><span class="tl-per">Nov 2019 – Jul 2020</span></div>
+          <ul class="tl-tasks">
+            <li>On-page and off-page SEO for international client websites</li>
+            <li>Content creation: blog posts, page descriptions, social copy</li>
+            <li>Social media strategy and paid ads (Facebook & Google)</li>
+            <li>Photo and video editing for digital campaigns</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-di"></div></div>
+        <div class="tl-box">
+          <div class="tl-head"><div><div class="tl-co">Holiday Call Center</div><div class="tl-role">SEO Content Writer · Jakarta</div></div><span class="tl-per">Jul – Oct 2019</span></div>
+          <ul class="tl-tasks">
+            <li>Keyword research and SEO-optimized content writing</li>
+            <li>Blog articles, website copy, and social media content</li>
+            <li>Marketing copy that drives product and service awareness</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<section id="contact">
+  <div class="wrap">
+    <div class="ct-grid">
+      <div>
+        <div class="s-lbl">Contact</div>
+        <h2 class="s-title">Let's Scale Your<br>Organic Growth</h2>
+        <p style="color:var(--muted);font-size:14px;line-height:1.8;margin-top:14px">I am currently open to new opportunities including full time, contract, or remote roles. If you need a strategic SEO partner who delivers measurable and business aligned results, let's connect.</p>
+        <div class="proof-links">
+          <a href="https://bit.ly/rian-makatita-keyword-rankings" target="_blank" class="proof-link">📊 Full Keyword Rankings Proof (Jan 2026)</a>
+          <a href="https://www.qhomemart.com" target="_blank" class="proof-link">🌐 Live Project: qhomemart.com</a>
+        </div>
+      </div>
+      <div class="ct-links">
+        <a href="mailto:rianmakatita1201@gmail.com" class="ct-link"><div class="ct-icon">✉</div><div><div class="ct-lbl">Email</div><div class="ct-val">rianmakatita1201@gmail.com</div></div></a>
+        <a href="https://www.linkedin.com/in/rian-makatita-ab7431190/" target="_blank" class="ct-link"><div class="ct-icon" style="font-size:13px;font-weight:700;color:var(--accent)">in</div><div><div class="ct-lbl">LinkedIn</div><div class="ct-val">linkedin.com/in/rian-makatita</div></div></a>
+        <a href="https://wa.me/6281326812333" target="_blank" class="ct-link"><div class="ct-icon">📱</div><div><div class="ct-lbl">WhatsApp</div><div class="ct-val">+62 813 2681 2333</div></div></a>
+        <div class="ct-link" style="cursor:default"><div class="ct-icon">📍</div><div><div class="ct-lbl">Location</div><div class="ct-val">Yogyakarta — Open to Remote</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">Rian Makatita</div>
+  <div class="f-copy">SEO Strategist & Automation Expert · 2026</div>
+</footer>
+
+</body>
+</html>
