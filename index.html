@@ -15,12 +15,14 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
 
+/* NAV */
 nav{position:sticky;top:0;z-index:100;padding:18px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--accent)}
 .nav-links{display:flex;gap:36px;list-style:none}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:12px;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--accent)}
 
+/* HERO */
 .hero{padding:80px 60px;background:var(--bg);position:relative;overflow:hidden}
 .orb{position:absolute;border-radius:50%;filter:blur(110px);opacity:.1;pointer-events:none}
 .o1{width:500px;height:500px;background:var(--accent);top:-100px;right:-80px}
@@ -59,6 +61,7 @@ nav{position:sticky;top:0;z-index:100;padding:18px 60px;display:flex;justify-con
 .sc-b .stat-per{color:var(--accent2);background:rgba(0,102,255,.08);border:1px solid rgba(0,102,255,.15)}
 .sc-o .stat-per{color:var(--accent3);background:rgba(255,107,53,.08);border:1px solid rgba(255,107,53,.15)}
 
+/* SHARED */
 hr.div{border:none;border-top:1px solid var(--border)}
 section{padding:80px 60px}
 .wrap{max-width:1160px;margin:0 auto}
@@ -67,6 +70,7 @@ section{padding:80px 60px}
 .s-title{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:700;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px}
 .s-sub{color:var(--muted);font-size:14px;max-width:520px;line-height:1.8;margin-bottom:48px}
 
+/* CASE STUDY */
 #case{background:var(--surface)}
 .case-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-bottom:48px;align-items:start}
 .proj-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,102,255,.1);border:1px solid rgba(0,102,255,.2);padding:4px 12px;border-radius:100px;font-size:11px;color:var(--accent2);margin-bottom:16px}
@@ -101,6 +105,7 @@ section{padding:80px 60px}
 .ba-after .ic{background:rgba(0,229,160,.1);border:1px solid rgba(0,229,160,.3);color:var(--accent)}
 .proof-cta{text-align:center;padding:8px 0 16px}
 
+/* SKILLS */
 #skills{background:var(--bg)}
 .sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .sk-cat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:all .3s}
@@ -110,6 +115,7 @@ section{padding:80px 60px}
 .sk-list li{font-size:13px;color:#9898aa;display:flex;align-items:center;gap:8px}
 .sk-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--muted);flex-shrink:0}
 
+/* EXPERIENCE */
 #exp{background:var(--surface)}
 .timeline{position:relative;display:flex;flex-direction:column}
 .timeline::before{content:'';position:absolute;left:18px;top:22px;bottom:22px;width:1px;background:var(--border)}
@@ -129,6 +135,7 @@ section{padding:80px 60px}
 .tl-tasks li{font-size:13px;color:#9898aa;padding-left:14px;position:relative;line-height:1.6}
 .tl-tasks li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px}
 
+/* CONTACT */
 #contact{background:var(--bg)}
 .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .ct-links{display:flex;flex-direction:column;gap:12px}
@@ -141,6 +148,7 @@ section{padding:80px 60px}
 .proof-link{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--accent);text-decoration:none;padding:10px 16px;border-radius:8px;background:rgba(0,229,160,.05);border:1px solid rgba(0,229,160,.1);transition:all .3s}
 .proof-link:hover{background:rgba(0,229,160,.1);transform:translateX(4px)}
 
+/* FOOTER */
 footer{background:var(--surface);border-top:1px solid var(--border);padding:28px 60px;display:flex;justify-content:space-between;align-items:center}
 .f-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--accent)}
 .f-copy{font-size:12px;color:var(--muted)}
@@ -259,28 +267,28 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:28px
       <div class="sc-card"><div class="sc-n">01</div><div class="sc-t">Local-First Conversion Strategy</div><div class="sc-d">Prioritized capturing high-intent local queries to deliver immediate ROI and drive physical store visits while national logistics infrastructure was being assessed.</div></div>
       <div class="sc-card"><div class="sc-n">02</div><div class="sc-t">Strategic National Expansion</div><div class="sc-d">Planned a phased expansion for national keywords, focusing on high-margin product categories once the site's technical foundation was fully stabilized.</div></div>
       <div class="sc-card"><div class="sc-n">03</div><div class="sc-t">Technical Debt Liquidation</div><div class="sc-d">Led a massive cleanup of 3,000+ legacy articles to resolve internal link spam, broken hierarchies, and severe keyword cannibalization using custom Python automation.</div></div>
-      <div class="sc-card"><div class="sc-n">04</div><div class="sc-t">Weekly Sprint Engine</div><div class="sc-d">Implemented a "Category of the Week" rotation — managing a team to produce 24 targeted cluster pages per sprint with 100% alignment to intent-first standards.</div></div>
+      <div class="sc-card"><div class="sc-n">04</div><div class="sc-t">Weekly Sprint Engine</div><div class="sc-d">Designed weekly SILO based content plans every Saturday and oversaw daily optimization cycles from Monday to Saturday to ensure team execution aligns perfectly with the strategy</div></div>
     </div>
     <div class="s-lbl">The Transformation</div>
     <div class="ba">
       <div class="ba-p ba-before">
         <div class="ba-lbl">⚠ Before — Legacy State</div>
         <ul class="ba-list">
-          <li><div class="ic">✕</div>Unstructured content — pages without clear roles</li>
-          <li><div class="ic">✕</div>Fragmented, non-cohesive internal linking</li>
-          <li><div class="ic">✕</div>Blogs cannibalizing high-value money pages</li>
-          <li><div class="ic">✕</div>Volume-first execution with low business ROI</li>
-          <li><div class="ic">✕</div>Zero separation between local and national intent</li>
+          <li><div class="ic">✕</div>Over 3,000 blog articles cannibalizing money pages with overlapping keywords</li>
+          <li><div class="ic">✕</div>Internal link spam with wrong directions and irrelevant anchors throughout the site</li>
+          <li><div class="ic">✕</div>No intent separation between local and national traffic</li>
+          <li><div class="ic">✕</div>No content planning system or weekly optimization workflow</li>
+          <li><div class="ic">✕</div>No SILO architecture with pages having no clear roles or hierarchy</li>
         </ul>
       </div>
       <div class="ba-p ba-after">
         <div class="ba-lbl">✓ After — Strategic State</div>
         <ul class="ba-list">
-          <li><div class="ic">✓</div>Intent-first architecture with clear Local vs. National roles</li>
-          <li><div class="ic">✓</div>Systematic silo authority engine with structured linking</li>
-          <li><div class="ic">✓</div>Revenue-driven prioritization via local intent targeting</li>
-          <li><div class="ic">✓</div>Authority-first approach — structural growth, no risky backlinks</li>
-          <li><div class="ic">✓</div>Zero keyword cannibalization across all page types</li>
+          <li><div class="ic">✓</div>Weekly SILO based content planner with a new category every week optimized Mon to Sat</li>
+          <li><div class="ic">✓</div>Clear intent segmentation into Local Landing Pages, National PLPs, and Blog for soft selling</li>
+          <li><div class="ic">✓</div>Over 3,000 cannibalization issues resolved via consolidation and 301 redirects (on progress)</li>
+          <li><div class="ic">✓</div>Internal link schemas designed per pillar with anchors, direction, and density fully controlled</li>
+          <li><div class="ic">✓</div>Python automation tools built for internal link cleanup with AI integration in development for auto linking</li>
         </ul>
       </div>
     </div>
@@ -348,11 +356,14 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:28px
         <div class="tl-box">
           <div class="tl-head"><div><div class="tl-co">QHomeMart</div><div class="tl-role">SEO Strategist — Lead Role · Yogyakarta</div></div><span class="tl-per">May 2025 – Present</span></div>
           <ul class="tl-tasks">
-            <li>Led end-to-end SEO strategy for a multi-category e-commerce platform</li>
-            <li>Delivered 190+ Page 1 keyword rankings across local & national markets</li>
-            <li>Built internal SEO automation tools using Python to scale operations</li>
-            <li>Managed and mentored an SEO Specialist and Content Writer</li>
+            <li>Owned full SEO strategy as lead including roadmap, keyword prioritization, and weekly SILO based content planning</li>
+            <li>Designed weekly internal link schemas for pillar and cluster pages controlling anchor text, link direction, and keyword density</li>
+            <li>Segmented market intent into two tracks: Local Landing Pages for store visits and National PLPs for online sales, with blog content for soft selling and traffic</li>
+            <li>Audited and resolved 3,000+ cannibalized blog articles via consolidation, 301 redirects, and tag cleanup (on progress)</li>
+            <li>Reviewed team output daily covering meta title, meta description, keyword density, and internal link alignment against SILO schema</li>
+            <li>Managed and mentored SEO Specialist and SEO Content Writer across Mon to Sat optimization cycles</li>
             <li>Generated 2,967 WhatsApp leads from organic search, growing from zero in ~8 months</li>
+            <li>Built custom Python tools to automate internal link cleanup and blog tag removal, currently integrating AI for auto linking aligned with SILO schema</li>
           </ul>
         </div>
       </div>
